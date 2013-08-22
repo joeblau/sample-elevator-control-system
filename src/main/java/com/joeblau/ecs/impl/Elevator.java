@@ -17,12 +17,18 @@ import java.util.Queue;
 public class Elevator implements ElevatorFactory {
   private Integer currentFloor;
   private Queue<Integer> destinationFloors;
-  private ElevatorDirection elevatorDirection;
 
   public Elevator(Integer currentFloor, Queue<Integer> destinationFloors) {
     this.currentFloor = currentFloor;
-    this.destinationFloors = new LinkedList<Integer>() {
-    };
+    this.destinationFloors = new LinkedList<Integer>();
+  }
+
+  public int nextDestionation(){
+    return this.destinationFloors.peek();
+  }
+
+  public int currentFloor(){
+    return this.currentFloor;
   }
 
   @Override
@@ -42,10 +48,12 @@ public class Elevator implements ElevatorFactory {
 
   @Override
   public ElevatorDirection direction() {
-    if (currentFloor < destinationFloors.peek()){
-      return ElevatorDirection.ELEVATOR_UP;
-    } else if (currentFloor > destinationFloors.peek()) {
-      return ElevatorDirection.ELEVATOR_DOWN;
+    if (destinationFloors.size() > 0){
+      if (currentFloor < destinationFloors.peek()){
+        return ElevatorDirection.ELEVATOR_UP;
+      } else if (currentFloor > destinationFloors.peek()) {
+        return ElevatorDirection.ELEVATOR_DOWN;
+      }
     }
     return ElevatorDirection.ELEVATOR_HOLD;
   }
