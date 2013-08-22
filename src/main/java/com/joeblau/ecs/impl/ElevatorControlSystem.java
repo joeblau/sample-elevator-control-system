@@ -27,8 +27,19 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
     if (numberOfElevators < 0) throw new InvalidNumber("Elevator number must be positive");
     this.numberOfElevators = (numberOfElevators > MAX_ELEVATORS)?MAX_ELEVATORS:numberOfElevators;
     this.numberOfFloors = numberOfFloors;
-    elevators = new ArrayList<Elevator>(numberOfElevators);
+    initializeElevators();
     pickupLocations = new LinkedList<Integer>();
+  }
+
+  private void initializeElevators(){
+    elevators = new ArrayList<Elevator>();
+    for (int idx=0;idx<this.numberOfElevators;idx++){
+      elevators.add(new Elevator(1, null));
+    }
+  }
+
+  public ArrayList<Elevator> getElevators(){
+    return elevators;
   }
 
   @Override

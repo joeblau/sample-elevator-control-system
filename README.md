@@ -39,6 +39,7 @@ public enum ElevatorStatus {
 
 ## Things to improve
 
+- [ ] Improve algorithm for finding near elevators
 - [ ] Queue that controls the destination floors could be converted into a better data structure
   - [ ] Sorted Insert List
 - [ ] Handle Hold cases
@@ -46,3 +47,4 @@ public enum ElevatorStatus {
   - [ ] Emergency situation where elevator can't be used
   - [ ] Maintenance Mode e.g. movers or maintenance people
 - [ ] Added lowest and highest floors to elevators. Not all elevators in a building go to the same level
+- [ ] Better error and exception handling
