@@ -22,12 +22,7 @@ public class Elevator implements ElevatorFactory {
 
   @Override
   public void addNewDestinatoin(Integer destination) {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  @Override
-  public void addNewPickup(Integer pickup) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    this.destinationFloors.add(destination);
   }
 
   @Override

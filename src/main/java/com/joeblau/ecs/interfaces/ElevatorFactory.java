@@ -13,7 +13,6 @@ import java.util.ArrayList;
  */
 public interface ElevatorFactory {
   public void addNewDestinatoin(Integer destination);
-  public void addNewPickup(Integer pickup);
   public ElevatorStatus status();
 
 }
