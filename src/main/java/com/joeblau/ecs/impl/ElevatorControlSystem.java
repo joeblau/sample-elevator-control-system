@@ -25,10 +25,14 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
     elevators = new ArrayList<Elevator>(numberOfElevators);
   }
 
+  @Override
+  public void pickUp(Integer pickUpFloor) {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
 
   @Override
-  public void status(Integer elevatorId) {
-//    elevators[elevatorId];
+  public void destination(Integer elevatorId, Integer destinationFloor) {
+    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
@@ -51,17 +55,14 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
               currElevator.moveDown();
               break;
             case ELEVATOR_HOLD:
-              // Could have a timer here to alert users that they are holding the door open to long
-              // Could also be an emergency situation where elevator can't be used
-              //
+              // TODO: check timer here to alert users that they are holding the door open to long
+              // TODO: Emergency situation where elevator can't be used
+              // TODO: Maintenance Mode e.g. movers or maintenance people
               break;
           }
           if (currElevator.direction() == ElevatorDirection.ELEVATOR_UP)
           break;
       }
     }
-
-
-
   }
 }

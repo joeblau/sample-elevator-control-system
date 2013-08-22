@@ -8,7 +8,8 @@ package main.java.com.joeblau.ecs.interfaces;
  * To change this template use File | Settings | File Templates.
  */
 public interface ElevatorControlSystemFactory {
-  public void status(Integer elevatorId);
+  public void pickUp(Integer pickUpFloor);
+  public void destination(Integer elevatorId, Integer destinationFloor);
   public void step();
 
 }
