@@ -3,6 +3,7 @@ package main.java.com.joeblau.ecs.impl;
 import main.java.com.joeblau.ecs.interfaces.ElevatorControlSystemFactory;
 
 import java.util.ArrayList;
+import java.util.Queue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,6 +16,7 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
   Integer numberOfElevators = 0;
   Integer numberOfFloors = 0;
   ArrayList<Elevator> elevators;
+  Queue<Integer> pickupLocations;
 
   public ElevatorControlSystem(Integer numberOfElevators, Integer numberOfFloors) {
     this.numberOfElevators = numberOfElevators;
@@ -30,10 +32,21 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
   @Override
   public void step() {
     // Loop though every elevator
+    for (Elevator currElevator : elevators){
+      // Check to figure out which ones are unoccupied and update call
+      switch (currElevator.status()){
+        case ELEVATOR_EMPTY:
+          // do something
+          break;
+        case ELEVATOR_OCCUPIED:
 
-    // Check to figure out which ones are unoccupied and update call
+          break;
 
-    // Move occupied Elevators one step closer to next closest destination in direction
+      }
+
+      // Move occupied Elevators one step closer to next closest destination in direction
+    }
+
 
 
   }

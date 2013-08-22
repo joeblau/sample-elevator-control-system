@@ -27,6 +27,6 @@ public class Elevator implements ElevatorFactory {
 
   @Override
   public ElevatorStatus status() {
-    return (destinationFloors.size() > 0)?ElevatorStatus.OCCUPIED:ElevatorStatus.EMPTY;
+    return (destinationFloors.size() > 0)?ElevatorStatus.ELEVATOR_OCCUPIED:ElevatorStatus.ELEVATOR_EMPTY;
   }
 }

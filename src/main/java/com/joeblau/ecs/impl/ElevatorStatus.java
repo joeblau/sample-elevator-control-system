@@ -8,6 +8,6 @@ package main.java.com.joeblau.ecs.impl;
  * To change this template use File | Settings | File Templates.
  */
 public enum ElevatorStatus {
-  OCCUPIED,
-  EMPTY
+  ELEVATOR_OCCUPIED,
+  ELEVATOR_EMPTY;
 }
