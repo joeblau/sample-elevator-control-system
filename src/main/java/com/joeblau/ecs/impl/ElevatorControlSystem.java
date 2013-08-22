@@ -4,6 +4,7 @@ import main.java.com.joeblau.ecs.impl.enums.ElevatorDirection;
 import main.java.com.joeblau.ecs.interfaces.ElevatorControlSystemFactory;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Queue;
 
 /**
@@ -23,16 +24,17 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
     this.numberOfElevators = numberOfElevators;
     this.numberOfFloors = numberOfFloors;
     elevators = new ArrayList<Elevator>(numberOfElevators);
+    pickupLocations = new LinkedList<Integer>();
   }
 
   @Override
   public void pickUp(Integer pickUpFloor) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    pickupLocations.add(pickUpFloor);
   }
 
   @Override
   public void destination(Integer elevatorId, Integer destinationFloor) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    elevators.get(elevatorId).addNewDestinatoin(destinationFloor);
   }
 
   @Override
@@ -55,7 +57,7 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
               currElevator.moveDown();
               break;
             case ELEVATOR_HOLD:
-              // TODO: check timer here to alert users that they are holding the door open to long
+              // TODO: Check timer here to alert users that they are holding the door open to long
               // TODO: Emergency situation where elevator can't be used
               // TODO: Maintenance Mode e.g. movers or maintenance people
               break;

@@ -1,5 +1,8 @@
 package test.main.java.com.joeblau.ecs.impl;
 
+import main.java.com.joeblau.ecs.impl.ElevatorControlSystem;
+import org.junit.Before;
+
 /**
  * Created with IntelliJ IDEA.
  * User: josephblau
@@ -8,4 +11,10 @@ package test.main.java.com.joeblau.ecs.impl;
  * To change this template use File | Settings | File Templates.
  */
 public class ElevatorControlSystemTest {
+  private ElevatorControlSystem elevatorControlSystem;
+  @Before
+  public void initialize(){
+    elevatorControlSystem = new ElevatorControlSystem(2, 20);
+
+  }
 }
