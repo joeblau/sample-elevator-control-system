@@ -7,5 +7,7 @@ package main.java.com.joeblau.ecs.impl;
  * Time: 9:51 AM
  * To change this template use File | Settings | File Templates.
  */
-public class ElevatorStatus {
+public enum ElevatorStatus {
+  OCCUPIED,
+  EMPTY
 }
