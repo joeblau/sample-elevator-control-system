@@ -24,6 +24,7 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
     elevators = new ArrayList<Elevator>(numberOfElevators);
   }
 
+
   @Override
   public void status(Integer elevatorId) {
 //    elevators[elevatorId];
@@ -36,10 +37,12 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
       // Check to figure out which ones are unoccupied and update call
       switch (currElevator.status()){
         case ELEVATOR_EMPTY:
-          // do something
+          if (!pickupLocations.isEmpty())
+            currElevator.addNewDestinatoin(pickupLocations.poll());
           break;
         case ELEVATOR_OCCUPIED:
 
+          currElevator.
           break;
 
       }
