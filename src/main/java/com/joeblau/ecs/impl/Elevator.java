@@ -31,6 +31,9 @@ public class Elevator implements ElevatorFactory {
     return this.currentFloor;
   }
 
+  public void popDestination(){
+    this.destinationFloors.remove();
+  }
   @Override
   public void addNewDestinatoin(Integer destination) {
     this.destinationFloors.add(destination);

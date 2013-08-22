@@ -75,6 +75,7 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
               // TODO: Check timer here to alert users that they are holding the door open to long
               // TODO: Emergency situation where elevator can't be used
               // TODO: Maintenance Mode e.g. movers or maintenance people
+              currElevator.popDestination();
               break;
           }
           if (currElevator.direction() == ElevatorDirection.ELEVATOR_UP)
