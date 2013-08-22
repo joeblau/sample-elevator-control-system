@@ -1,5 +1,7 @@
 package main.java.com.joeblau.ecs.interfaces;
 
+import main.java.com.joeblau.ecs.impl.ElevatorStatus;
+
 import java.util.ArrayList;
 
 /**
@@ -12,5 +14,6 @@ import java.util.ArrayList;
 public interface ElevatorFactory {
   public void addNewDestinatoin(Integer destination);
   public void addNewPickup(Integer pickup);
+  public ElevatorStatus status();
 
 }

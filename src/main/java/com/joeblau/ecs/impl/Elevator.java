@@ -29,4 +29,9 @@ public class Elevator implements ElevatorFactory {
   public void addNewPickup(Integer pickup) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
+
+  @Override
+  public ElevatorStatus status() {
+    return (destinationFloors.size() > 0)?ElevatorStatus.OCCUPIED:ElevatorStatus.EMPTY;
+  }
 }
