@@ -1,4 +1,4 @@
-package main.java.com.joeblau.ecs.impl;
+package main.java.com.joeblau.ecs.impl.enums;
 
 /**
  * Created with IntelliJ IDEA.

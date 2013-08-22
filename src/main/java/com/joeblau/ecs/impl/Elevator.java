@@ -1,8 +1,11 @@
 package main.java.com.joeblau.ecs.impl;
 
+import main.java.com.joeblau.ecs.impl.enums.ElevatorDirection;
+import main.java.com.joeblau.ecs.impl.enums.ElevatorStatus;
 import main.java.com.joeblau.ecs.interfaces.ElevatorFactory;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,16 +16,38 @@ import java.util.ArrayList;
  */
 public class Elevator implements ElevatorFactory {
   private Integer currentFloor;
-  private ArrayList<Integer> destinationFloors;
+  private Queue<Integer> destinationFloors;
+  private ElevatorDirection elevatorDirection;
 
-  public Elevator(Integer currentFloor, ArrayList<Integer> destinationFloors) {
+  public Elevator(Integer currentFloor, Queue<Integer> destinationFloors) {
     this.currentFloor = currentFloor;
-    this.destinationFloors = new ArrayList<Integer>();;
+    this.destinationFloors = new LinkedList<Integer>() {
+    };
   }
 
   @Override
   public void addNewDestinatoin(Integer destination) {
     this.destinationFloors.add(destination);
+  }
+
+  @Override
+  public void moveUp() {
+    currentFloor++;
+  }
+
+  @Override
+  public void moveDown() {
+    currentFloor--;
+  }
+
+  @Override
+  public ElevatorDirection direction() {
+    if (currentFloor < destinationFloors.peek()){
+      return ElevatorDirection.ELEVATOR_UP;
+    } else if (currentFloor > destinationFloors.peek()) {
+      return ElevatorDirection.ELEVATOR_DOWN;
+    }
+    return ElevatorDirection.ELEVATOR_HOLD;
   }
 
   @Override

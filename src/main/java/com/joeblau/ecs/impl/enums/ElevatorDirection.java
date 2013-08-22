@@ -1,4 +1,4 @@
-package main.java.com.joeblau.ecs.impl;
+package main.java.com.joeblau.ecs.impl.enums;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,5 +9,6 @@ package main.java.com.joeblau.ecs.impl;
  */
 public enum ElevatorDirection {
   ELEVATOR_UP,
-  ELEVATOR_DOWN
+  ELEVATOR_DOWN,
+  ELEVATOR_HOLD
 }
