@@ -27,7 +27,6 @@ public enum ElevatorDirection {
   ELEVATOR_DOWN,    // Elevator is going down
   ELEVATOR_HOLD     // Elevator is being held
 }
-
 ```
 
 __ElevatorStatus__ - Each elevator has one of two status
@@ -36,7 +35,6 @@ public enum ElevatorStatus {
   ELEVATOR_OCCUPIED,  // Elevator is occupied by users inside who are request floors
   ELEVATOR_EMPTY      // Elevator is empty and can be used to request a pickup
 }
-
 ```
 
 ## Things to improve
@@ -47,3 +45,4 @@ public enum ElevatorStatus {
   - [ ] Check timer here to alert users that they are holding the door open to long
   - [ ] Emergency situation where elevator can't be used
   - [ ] Maintenance Mode e.g. movers or maintenance people
+- [ ] Added lowest and highest floors to elevators. Not all elevators in a building go to the same level

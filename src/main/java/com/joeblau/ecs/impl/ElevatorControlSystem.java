@@ -1,6 +1,7 @@
 package main.java.com.joeblau.ecs.impl;
 
 import main.java.com.joeblau.ecs.impl.enums.ElevatorDirection;
+import main.java.com.joeblau.ecs.impl.exceptions.InvalidNumber;
 import main.java.com.joeblau.ecs.interfaces.ElevatorControlSystemFactory;
 
 import java.util.ArrayList;
@@ -15,13 +16,16 @@ import java.util.Queue;
  * To change this template use File | Settings | File Templates.
  */
 public class ElevatorControlSystem implements ElevatorControlSystemFactory {
+
+  public static final int MAX_ELEVATORS = 16;
   Integer numberOfElevators = 0;
   Integer numberOfFloors = 0;
   ArrayList<Elevator> elevators;
   Queue<Integer> pickupLocations;
 
-  public ElevatorControlSystem(Integer numberOfElevators, Integer numberOfFloors) {
-    this.numberOfElevators = numberOfElevators;
+  public ElevatorControlSystem(Integer numberOfElevators, Integer numberOfFloors) throws InvalidNumber {
+    if (numberOfElevators < 0) throw new InvalidNumber("Elevator number must be positive");
+    this.numberOfElevators = (numberOfElevators > MAX_ELEVATORS)?MAX_ELEVATORS:numberOfElevators;
     this.numberOfFloors = numberOfFloors;
     elevators = new ArrayList<Elevator>(numberOfElevators);
     pickupLocations = new LinkedList<Integer>();
