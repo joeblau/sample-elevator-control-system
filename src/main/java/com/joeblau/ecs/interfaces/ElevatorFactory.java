@@ -10,9 +10,6 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public interface ElevatorFactory {
-  Integer currentFloor = 0;
-  ArrayList<Integer> destinationFloors = new ArrayList<Integer>();
-
   public void addNewDestinatoin(Integer destination);
   public void addNewPickup(Integer pickup);
 
