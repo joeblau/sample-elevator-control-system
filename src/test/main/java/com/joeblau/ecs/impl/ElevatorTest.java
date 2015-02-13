@@ -24,7 +24,7 @@ public class ElevatorTest {
 
   @Before
   public void initializeElevator(){
-    elevator = new Elevator(0,null);
+    elevator = new Elevator(0);
   }
 
   @Test
