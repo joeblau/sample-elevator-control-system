@@ -18,7 +18,7 @@ public class Elevator implements ElevatorFactory {
   private Integer currentFloor;
   private Queue<Integer> destinationFloors;
 
-  public Elevator(Integer currentFloor, Queue<Integer> destinationFloors) {
+  public Elevator(Integer currentFloor) {
     this.currentFloor = currentFloor;
     this.destinationFloors = new LinkedList<Integer>();
   }
