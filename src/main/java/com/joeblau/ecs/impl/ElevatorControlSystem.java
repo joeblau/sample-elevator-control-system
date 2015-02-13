@@ -34,7 +34,7 @@ public class ElevatorControlSystem implements ElevatorControlSystemFactory {
   private void initializeElevators(){
     elevators = new ArrayList<Elevator>();
     for (int idx=0;idx<this.numberOfElevators;idx++){
-      elevators.add(new Elevator(1, null));
+      elevators.add(new Elevator(1));
     }
   }
 
